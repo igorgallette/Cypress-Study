@@ -24,6 +24,16 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+
+Cypress.Commands.add('login', (usuario, senha) => {
+    cy.get('#username').type(usuario)
+    cy.get('#password').type(senha, { log: false })
+    cy.get('.woocommerce-form > .button').click()
+    cy.get('a > .hidden-xs').should('contain', 'Welcome')
+
+})
+
+
 Cypress.Commands.add('addProduto', (produto, tamanho, cor, quantidade) => {
 
     cy.get('[class="image-hover unveil-image"]').eq(produto).click()

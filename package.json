@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/igorgallette/Final#readme",
   "dependencies": {
+    "@faker-js/faker": "^7.5.0",
     "cypress": "^10.6.0"
   }
 }
