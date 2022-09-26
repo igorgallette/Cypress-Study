@@ -4,15 +4,11 @@ describe('Adicionando protudos no carrinho', () => {
     beforeEach(() => {
         cy.visit('produtos')
     })
-
     it('Adicionar produto no carrinho com sucesso', () => {
         cy.addProduto('3', 'M', 'Green', '3')
-
     });
-
     it('Adicionar produto no carrinho com sucesso', () => {
         cy.addProduto('6', 'M', 'Gray', '3')
-
     });
 
     it.only('Adicionar produto no carrinho fora de estoque', () => {
@@ -22,7 +18,5 @@ describe('Adicionando protudos no carrinho', () => {
         cy.get('.input-text').clear().type(4)
         cy.get('.single_add_to_cart_button').click()
         cy.get('.stock').should('contain', 'Fora de estoque')
-
     });
-
 });

@@ -1,5 +1,4 @@
 class EnderecoPage {
-
     editarEnderecoFaturamento(nome, sobrenome, empresa, pais, rua, numero, cidade, estado, cep, telefone, email) {
         cy.get('.woocommerce-MyAccount-navigation-link--edit-address > a').click()
         cy.get(':nth-child(1) > .title > .edit').click()
@@ -15,16 +14,7 @@ class EnderecoPage {
         cy.get('#billing_phone').clear().type(telefone)
         cy.get('#billing_email').clear().type(email)
         cy.get(':nth-child(2) > .button').click()
-
-
-
     }
-
-    editarEnderecoEntrega() {
-
-    }
-
-
+    editarEnderecoEntrega() {}
 }
-
 export default new EnderecoPage()
